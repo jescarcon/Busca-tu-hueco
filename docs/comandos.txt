@@ -1,0 +1,60 @@
+############ ATAJOS RAPIDOS ############
+npm run dev (arrancar Frontend en desarrollo)
+npm run start:auth-service (arrancar app backend auth-service)
+npm run start:api-gateway (arrancar app backend api-gateway)
+
+
+pip freeze > requirements.txt (Crea/actualiza instalaciones)
+pip install -r requirements.txt
+#########################################
+
+
+############ Proceso de Creación ############
+#------------Env------------#
+1) Crear env
+    python -m venv env
+
+2) Activar env
+    .\env\Scripts\activate
+
+#------------Backend------------#
+1) Instalar la herramienta de línea de comandos oficial
+   npm i -g @nestjs/cli
+
+2) Iniciar proyecto Backend
+    nest new backend
+
+3) Conectar a la BD postgre con Prisma
+    4.1 Instalar Prisma
+        cd backend
+        npm install prisma --save-dev
+        npm install @prisma/client
+    4.2 Arrancar prisma
+        npx prisma init
+        
+    4.3 Añade en un env la DATABASE_URL
+        DATABASE_URL="postgresql://usuario:password@localhost:5432/tu_basedatos?schema=public"
+    4.5 Crear las tablas
+        npx prisma migrate dev --name init
+        npx prisma generate
+
+    4.6 Actualizar tablas
+        npx prisma generate --schema=prisma/schema.prisma
+        npx prisma migrate dev --name tables --schema=prisma/schema.prisma
+
+    4.7 Eliminar tablas
+        npx prisma migrate reset --schema=prisma/schema.prisma
+
+4) Arranca el proyecto en http://localhost:3000
+    npm run start:dev
+5) Crea apps
+    nest g app api-gateway
+
+
+#------------Frontend------------#
+1) Crear proyecto React + Vite
+    npm create vite@latest
+2) Correr proyecto 
+    - cd carpeta
+    - npm install
+    - npm run dev

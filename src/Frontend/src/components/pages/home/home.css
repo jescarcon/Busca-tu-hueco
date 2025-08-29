@@ -1,0 +1,28 @@
+.home-container {
+}
+
+.home-navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #6da5d2;
+}
+
+.home-navbar-logo {
+    width: 20%;
+}
+
+.home-navbar-items {
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 60%;
+
+}
+.home-navbar-item{
+
+}
+.home-navbar-profile {
+    width: 20%;
+}
+.titulo{
+}
