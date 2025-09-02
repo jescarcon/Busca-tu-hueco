@@ -98,7 +98,7 @@
 .CustomNavbar-submit-button {
     width: 100%;
     padding: 0.5rem;
-    background-color: #1d4ed8;
+    background-color: #1e90ff;
     border: none;
     color: white;
     font-weight: 500;
@@ -118,11 +118,26 @@
     margin-top: 0.4rem;
     font-size: 0.85rem;
     text-decoration: none;
-    color: #1d4ed8;
+    color: #1e90ff;
     transition: text-decoration 0.2s;
 }
 
 .CustomNavbar-login-links a:hover {
     text-decoration: underline;
     color:#F9B233;
+}
+
+
+
+/* ------------------- RESPONSIVE ------------------- */
+@media screen and (max-width: 1024px) {
+    .CustomNavbar-navbar-container {
+        gap: 2rem;          /* Reduce el espacio entre los links */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CustomNavbar-navbar-container {
+        gap: 1rem;          /* Aún más compacto en móviles */
+    }
 }

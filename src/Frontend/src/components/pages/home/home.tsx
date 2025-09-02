@@ -45,7 +45,6 @@ export default function Home() {
 
     return (
         <div className='home-container'>
-            <div className='navbar-component'><CustomNavbar /></div>
             <div className='home-body'>
 
                 <div className='body-intro'>
@@ -103,7 +102,6 @@ export default function Home() {
                     <img src={logo} alt='logo.jpg' className='body-contact-logo' />
                 </div>
             </div>
-            <div className='footer-component'><CustomFooter /></div>
         </div>
     );
 }
