@@ -1,30 +1,52 @@
-import React from "react";
-import "./footer.css"; 
+import "./footer.css";
+import facebook from "/images/home/facebook.png";
+import git from "/images/home/git.png";
+import instagram from "/images/home/instagram.png";
+import twitter from "/images/home/twitter.png";
 
-export default function Footer() {
+export function CustomFooter() {
   return (
-    <footer className="footer-container">
-      <div className="footer-content">
-        <div className="footer-section">
-          <h4>Acerca de</h4>
-          <p>Tu proyecto de reservas de espacios.</p>
+    <footer className="footer">
+      <div className="footer-container">
+        {/* Brand */}
+        <div className="footer-brand">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            alt="Logo"
+            className="footer-logo"
+          />
+          <span className="footer-brand-name">Busca tu Hueco</span>
         </div>
-        <div className="footer-section">
-          <h4>Enlaces</h4>
-          <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Registro</a></li>
-          </ul>
-        </div>
-        <div className="footer-section">
-          <h4>Contacto</h4>
-          <p>Email: info@tudominio.com</p>
-          <p>Tel: +34 123 456 789</p>
+
+        {/* Navigation Links */}
+        <ul className="footer-links">
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+
+        {/* Social Icons */}
+        <div className="footer-socials">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook">
+            <img src={facebook} alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" title="Instagram">
+            <img src={instagram} alt="Instagram" />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" title="Twitter / X">
+            <img src={twitter} alt="Twitter / X" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub">
+            <img src={git} alt="GitHub" />
+          </a>
         </div>
       </div>
+
       <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} Tu Proyecto. Todos los derechos reservados.
+        <p>
+          © {new Date().getFullYear()} Busca tu Hueco. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );

@@ -1,28 +1,242 @@
 .home-container {
-}
-
-.home-navbar {
     display: flex;
-    justify-content: space-between;
-    background-color: #4ea0f1;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 
-.home-navbar-logo {
-    width: 20%;
+/*-----------------------------BODY-----------------------------*/
+.home-body {
+    background-color: rgb(42, 42, 42);
+    flex: 1;
 }
 
-.home-navbar-items {
+/*------------------INTRO------------------*/
+
+.body-intro {
+    position: relative;
+    height: 400px;
+}
+
+.body-intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.body-intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+
+}
+
+/*------------------SEARCH------------------*/
+.body-search {
     display: flex;
-    justify-content: space-evenly;
-    
-    width: 60%;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 60%;
+
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 12px;
 
 }
-.home-navbar-item{
+
+/*----------HEADER-----------*/
+
+.body-search-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    gap: 10px;
+    user-select: none;
 
 }
-.home-navbar-profile {
-    width: 20%;
+
+.body-search-header-icon img {
+    width: 40px;
 }
-.titulo{
+
+.body-search-header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
 }
+
+/*----------INPUT-----------*/
+
+.body-search-input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.body-search-input input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.body-search-input input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.body-search-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.body-search-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.body-search-button:hover {
+    background-color: #F9B233;
+}
+
+
+/*------------------NEWS CARROUSEL ------------------*/
+
+.body-news {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    color: white;
+}
+
+/*------------------CONTACT------------------*/
+.body-contact {
+    user-select: none;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.body-contact-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.body-contact-title {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.body-contact-button {
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.body-contact-button:hover {
+    background-color: #1c86ee;
+}
+
+.body-contact-logo {
+    position: relative;
+    z-index: 1;
+    width: 150px;
+    height: auto;
+}
+
+/*------------------RESPONSIVE------------------*/
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+
+    /*----------SEARCH----------*/
+    .body-search {
+        max-width: 90%;
+    }
+
+    .body-search-header {
+        margin-bottom: 5%;
+    }
+
+    /*----------FAVORITES----------*/
+
+    .body-news {
+        width: 90%;
+    }
+
+    /*----------CONTACT----------*/
+    .body-contact {
+        height: 300px;
+    }
+
+    .body-contact-title {
+        font-size: 1.5rem;
+    }
+
+    .body-contact-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .body-contact-logo {
+        width: 80px;
+    }
+
+}
+
+/* Tablets / pantallas medianas */
+@media (min-width: 769px) and (max-width: 1080px) {
+    .body-search-header {
+        margin-bottom: 5%;
+    }
+
+    .body-search {
+        max-width: 90%;
+    }
+}
+
+/* Desktop / pantallas grandes */
+@media (min-width: 1081px) {}

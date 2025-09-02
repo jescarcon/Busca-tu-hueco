@@ -1,0 +1,128 @@
+.CustomNavbar-container {
+    height: 100%;
+}
+
+/* -------------------LOGO-------------------*/
+.CustomNavbar-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.CustomNavbar-logo-image {
+    max-height: 80px;
+    width: auto;
+}
+
+/* -------------------NAVBAR-------------------*/
+.CustomNavbar-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #111827;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 4rem;
+    position: relative;
+    color: white;
+}
+
+/* Estilo de los links de navegación */
+.CustomNavbar-link {
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    transition: color 0.2s;
+}
+
+.CustomNavbar-link:hover {
+    color: #F9B233;
+}
+
+/* Dropdown Acceder */
+.CustomNavbar-login-dropdown {
+    position: relative;    
+    font-weight: 500;
+
+}
+
+.CustomNavbar-login-button {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: white;
+}
+
+.CustomNavbar-login-button:hover {
+    color: #F9B233;
+}
+
+/* Formulario del dropdown */
+.CustomNavbar-login-form {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+    z-index: 100;
+    border-radius: 5px;
+    color:black;
+}
+
+/* Mostrar dropdown al pasar el mouse */
+.CustomNavbar-login-dropdown:hover .CustomNavbar-login-form {
+    display: block;
+}
+
+/* Inputs del formulario */
+.CustomNavbar-input-email,
+.CustomNavbar-input-password {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Botón de login */
+.CustomNavbar-submit-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #1d4ed8;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.CustomNavbar-submit-button:hover {
+    background-color: #F9B233;
+}
+
+/* Enlaces debajo del formulario */
+.CustomNavbar-login-links a {
+    display: block;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #1d4ed8;
+    transition: text-decoration 0.2s;
+}
+
+.CustomNavbar-login-links a:hover {
+    text-decoration: underline;
+    color:#F9B233;
+}

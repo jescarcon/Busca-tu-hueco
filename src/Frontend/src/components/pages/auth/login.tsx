@@ -39,9 +39,8 @@ export default function Login() {
         }
     };
     //#endregion
-
+    
     return (
-    <div className='login-container'>
         <form onSubmit={handleSubmit(onSubmit)}>
             <h1>Iniciar sesión</h1>
 
@@ -52,7 +51,7 @@ export default function Login() {
             {errors.password && <p>{errors.password.message}</p>}
 
             <button type="submit">Entrar</button>
-
+            
 
             <p>
                 ¿No tienes cuenta?{' '}
@@ -61,6 +60,5 @@ export default function Login() {
                 </button>
             </p>
         </form>
-    </div>
     );
 }
