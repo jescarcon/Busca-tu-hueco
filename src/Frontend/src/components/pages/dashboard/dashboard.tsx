@@ -56,7 +56,7 @@ export default function Dashboard() {
   //#endregion
 
   return (
-    <div>
+    <div className='dashboard-container'>
       <button onClick={handleLogout}>Cerrar sesión</button>
       
       <div>
