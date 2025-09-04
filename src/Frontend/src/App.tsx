@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/utils/protectedRoute/protectedRoute";
 import "./App.css";
 import { AuthProvider } from "./components/utils/authContext/authContext";
 import Error from "./components/pages/error/error";
+import About from "./components/pages/about/about";
 
 export default function App() {
   return (
@@ -22,7 +23,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/register" element={<Register />} />
-              <Route path="*" element={<Error/>} />
+              <Route path="/contacto" element={<About />} />
+
+              <Route path="*" element={<Error />} />
 
               {/* Rutas protegidas */}
               <Route path="/dashboard" element={<ProtectedRoute>   <Dashboard />  </ProtectedRoute>} />

@@ -24,7 +24,7 @@ export function CustomFooter() {
             <li><a href="#">Sobre nosotros</a></li>
             <li><a href="#">Servicios</a></li>
             <li><a href="#">Privacidad</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/contacto">Contacto</a></li>
           </ul>
 
           {/* Social Icons */}
