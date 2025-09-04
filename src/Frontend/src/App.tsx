@@ -11,6 +11,8 @@ import "./App.css";
 import { AuthProvider } from "./components/utils/authContext/authContext";
 import Error from "./components/pages/error/error";
 import About from "./components/pages/about/about";
+import Profile from "./components/pages/profile/profile";
+import Contact from "./components/pages/contact/contact";
 
 export default function App() {
   return (
@@ -22,15 +24,16 @@ export default function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/contacto" element={<About />} />
+              <Route path="/registro" element={<Register />} />
+              <Route path="/nosotros" element={<About />} />
+              <Route path="/contacto" element={<Contact/>} />
 
               <Route path="*" element={<Error />} />
 
               {/* Rutas protegidas */}
-              <Route path="/dashboard" element={<ProtectedRoute>   <Dashboard />  </ProtectedRoute>} />
-              <Route path="/documents" element={<ProtectedRoute>   <Documents />   </ProtectedRoute>} />
-              <Route path="/reservations" element={<ProtectedRoute> <Reservations /> </ProtectedRoute>} />
+              <Route path="/perfil" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
+
+             
             </Routes>
           </main>
 

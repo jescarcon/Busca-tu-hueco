@@ -1,0 +1,113 @@
+/* Página con degradado */
+.contact-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1e90ff, #f9b233); /* degradado azul → amarillo */
+  user-select: none;
+}
+
+/* Hero */
+.contact-hero {
+  text-align: center;
+  max-width: 700px;
+  color: white; /* texto sobre el degradado */
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.541);
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.541);
+}
+
+/* Formulario */
+.contact-form-section {
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.9); /* semi-transparente sobre el degradado */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  max-height: 300px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+.form-group small {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Botón */
+.submit-btn {
+  background: #1e90ff;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 2.2rem;
+  }
+  .contact-hero p {
+    font-size: 1rem;
+  }
+}

@@ -1,15 +1,19 @@
 import React from "react";
 import "./About.css";
 
-// 👇 Aquí importas tus imágenes (pon las rutas correctas en /assets o donde las tengas)
 import heroImg from "/images/about/headquarters.jpg";
 import missionImg from "/images/about/mision.jpg";
 import visionImg from "/images/about/vision.jpg";
 import valuesImg from "/images/about/valores.png";
+
 import team1 from "/images/about/hombre1.jpg";
 import team2 from "/images/about/mujer1.jpg";
 import team3 from "/images/about/hombre2.jpg";
 import team4 from "/images/about/mujer2.jpg";
+
+import partner1 from "/images/about/partner1.jpg";
+import partner2 from "/images/about/partner2.jpg";
+import partner3 from "/images/about/partner3.jpg";
 
 export default function About() {
   return (
@@ -28,7 +32,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Misión y Visión */}
+      {/* Filosofía */}
       <section className="about-mission">
         <h2>Nuestra Filosofía</h2>
         <div className="mission-cards">
@@ -55,6 +59,29 @@ export default function About() {
               Pasión, transparencia y compromiso son los pilares que guían cada
               uno de nuestros proyectos.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Historia */}
+      <section className="about-history">
+        <h2>Nuestra Historia</h2>
+        <div className="timeline">
+          <div className="timeline-item">
+            <span className="year">2018</span>
+            <p>Nació la idea en un pequeño coworking con solo 3 personas.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2020</span>
+            <p>Lanzamos nuestro primer producto y conseguimos los primeros 100 clientes.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2022</span>
+            <p>Expansión internacional con oficinas en 3 países.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2024</span>
+            <p>Más de 1M de usuarios confían en nuestras soluciones.</p>
           </div>
         </div>
       </section>
@@ -86,19 +113,37 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contacto */}
-      <section className="about-contact">
-        <h2>Contáctanos</h2>
-        <p>
-          ¿Quieres trabajar con nosotros o saber más sobre lo que hacemos?
-          Escríbenos y te responderemos en breve.
-        </p>
-        <form className="contact-form">
-          <input type="text" placeholder="Tu nombre" required />
-          <input type="email" placeholder="Tu correo" required />
-          <textarea placeholder="Tu mensaje" required />
-          <button type="submit">Enviar</button>
-        </form>
+      {/* Cifras */}
+      <section className="about-stats">
+        <h2>Impacto en Números</h2>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <h3>+1M</h3>
+            <p>Usuarios</p>
+          </div>
+          <div className="stat-card">
+            <h3>15</h3>
+            <p>Países</p>
+          </div>
+          <div className="stat-card">
+            <h3>50+</h3>
+            <p>Proyectos</p>
+          </div>
+          <div className="stat-card">
+            <h3>100%</h3>
+            <p>Pasión</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="about-partners">
+        <h2>Nuestros Socios</h2>
+        <div className="partners-logos">
+          <img src={partner1} alt="Partner 1" />
+          <img src={partner2} alt="Partner 2" />
+          <img src={partner3} alt="Partner 3" />
+        </div>
       </section>
     </div>
   );

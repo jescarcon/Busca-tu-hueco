@@ -21,7 +21,7 @@ export function CustomFooter() {
 
           {/* Navigation Links */}
           <ul className="footer-links">
-            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="/nosotros">Sobre nosotros</a></li>
             <li><a href="#">Servicios</a></li>
             <li><a href="#">Privacidad</a></li>
             <li><a href="/contacto">Contacto</a></li>

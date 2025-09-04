@@ -31,7 +31,7 @@ function CustomNavbar() {
   const onSubmit = async (data: LoginFormData) => {
     try {
       await login(data.email, data.password);
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       alert("Credenciales incorrectas");
     }
@@ -43,7 +43,7 @@ function CustomNavbar() {
 
 
   const goToRegister = () => {
-    navigate('/register');
+    navigate('/registro');
   };
 
   const goToProfile = () => {
@@ -95,7 +95,7 @@ function CustomNavbar() {
                     ¿Olvidaste tu contraseña?
                   </a>
                   <a
-                    href="/register"
+                    href="/registro"
                     className="CustomNavbar-link-register"
                     onClick={goToRegister}
                   >

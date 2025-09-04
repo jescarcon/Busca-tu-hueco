@@ -7,7 +7,7 @@
 
 /* Hero */
 .about-hero {
-  background:no-repeat center center/cover;
+  background: no-repeat center center/cover;
   height: 60vh;
   position: relative;
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.74);
+  background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
@@ -37,7 +37,7 @@
 /* Misión y Visión */
 .about-mission {
   padding: 4rem 2rem;
-  background: #111827;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   text-align: center;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .mission-card {
-  background: white;
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -74,11 +74,70 @@
   margin-bottom: 1rem;
 }
 
+/* Historia horizontal */
+.about-history {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9, #e5e7eb);
+  text-align: center;
+}
+
+.about-history h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  /* horizontal */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow-x: auto;
+  /* permite scroll si no cabe */
+  padding-bottom: 2rem;
+}
+
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background-color: #1e90ff;
+  border-radius: 4px;
+}
+
+.timeline-item {
+  position: relative;
+  flex: 0 0 auto;
+  /* que no se encoja */
+  width: 200px;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
+}
+
+.timeline-item .year {
+  font-weight: bold;
+  color: #1e90ff;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+
 /* Equipo */
 .about-team {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #111827;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
 }
 
 .about-team h2 {
@@ -94,7 +153,7 @@
 }
 
 .team-card {
-  background: white;
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -117,57 +176,64 @@
   color: #1e90ff;
 }
 
-/* Contacto */
-.about-contact {
-  background: linear-gradient(to bottom right, #1e90ff, #f9b233);
-  color: white;
+/* Stats */
+.about-stats {
   padding: 4rem 2rem;
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  color: white;
   text-align: center;
 }
 
-.about-contact h2 {
+.about-stats h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.about-contact p {
   margin-bottom: 2rem;
-  font-size: 1rem;
 }
 
-.contact-form {
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Partners */
+.about-partners {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+}
+
+.about-partners h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.partners-logos {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
-  color:black;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  font-size: 1rem;
+.partners-logos img {
+  max-height: 60px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.contact-form textarea {
-  resize: none;
-  min-height: 120px;
-}
-
-.contact-form button {
-  background: #333;
-  color: white;
-  font-weight: 600;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.contact-form button:hover {
-  background: #222;
+.partners-logos img:hover {
+  opacity: 1;
 }
