@@ -39,7 +39,9 @@ export default function Home() {
 
     //#region Logic
 
-
+    const goToContact = () => {
+        navigate("/contacto"); // la ruta a la que quieres ir
+    };
     //#endregion
 
 
@@ -61,7 +63,7 @@ export default function Home() {
                     </div>
                     <div className='body-search-input'>
                         <input type='text' placeholder='Ej: Andalucía'></input>
-                    
+
                     </div>
                     <div className='body-search-button-container'>
                         <button className='body-search-button' onClick={() => console.log('Buscar')}>Buscar</button>
@@ -99,7 +101,7 @@ export default function Home() {
                 <div className='body-contact'>
                     <img src={tabla} alt='tabla.jpg' className='body-contact-img' />
                     <h1 className='body-contact-title'>Anúnciate con nosotros</h1>
-                    <button className='body-contact-button'>Te esperamos aquí</button>
+                    <button className='body-contact-button' onClick={goToContact}>Te esperamos aquí</button>
                     <img src={logo} alt='logo.jpg' className='body-contact-logo' />
                 </div>
             </div>

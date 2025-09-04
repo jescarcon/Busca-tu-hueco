@@ -47,7 +47,7 @@ function CustomNavbar() {
   };
 
   const goToProfile = () => {
-    navigate('/dashboard'); // 👈 o a donde quieras que vaya el perfil
+    navigate('/perfil'); // 👈 o a donde quieras que vaya el perfil
   };
 
   return (
@@ -73,10 +73,10 @@ function CustomNavbar() {
           <div className="CustomNavbar-login-form">
             {isAuthenticated ? (
               <div className="CustomNavbar-form">
-                <button onClick={goToProfile} className="CustomNavbar-submit-button">
+                <button onClick={goToProfile} className="CustomNavbar-profile-button">
                   Mi perfil
                 </button>
-                <button onClick={logout} className="CustomNavbar-submit-button">
+                <button onClick={logout} className="CustomNavbar-logout-button">
                   Cerrar sesión
                 </button>
               </div>

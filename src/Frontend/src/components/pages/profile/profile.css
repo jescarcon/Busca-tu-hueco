@@ -1,0 +1,110 @@
+/* Página con degradado */
+.profile-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e90ff, #F9B233);
+  padding: 2rem;
+}
+
+/* Card blanca centrada */
+.profile-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+    user-select: none;
+
+}
+
+/* Cabecera */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.profile-info h1 {
+  font-size: 2.2rem;
+  margin: 0;
+
+}
+
+.profile-info p {
+  color: #666;
+  margin: 0.3rem 0;
+  font-weight: 500;
+}
+
+.profile-info span {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Estadísticas */
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: #f9f9f9;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex: 1;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #1e90ff;
+  margin-bottom: 0.5rem;
+}
+
+/* Acciones */
+.profile-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.action-btn {
+  padding: 0.75rem 1.75rem;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #F9B233;
+}

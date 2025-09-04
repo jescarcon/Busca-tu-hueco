@@ -44,7 +44,7 @@
 
 /* Dropdown Acceder */
 .CustomNavbar-login-dropdown {
-    position: relative;    
+    position: relative;
     font-weight: 500;
 
 }
@@ -63,13 +63,14 @@
 }
 
 .CustomNavbar-login-button::after {
-  content: ' ▼';
-  transition: transform 0.2s ease;
+    content: ' ▼';
+    transition: transform 0.2s ease;
 }
 
 .CustomNavbar-login-button:hover::after {
-  content: ' ▲';
+    content: ' ▲';
 }
+
 /* Formulario del dropdown */
 .CustomNavbar-login-form {
     position: absolute;
@@ -78,12 +79,13 @@
     background-color: #ffffff;
     border: 1px solid #ddd;
     padding: 1rem;
-    min-width: 250px;
+    min-width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none; /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     z-index: 100;
     border-radius: 5px;
-    color:black;
+    color: black;
 }
 
 /* Mostrar dropdown al pasar el mouse */
@@ -106,16 +108,54 @@
 .CustomNavbar-submit-button {
     width: 100%;
     padding: 0.5rem;
-    background-color: #1e90ff; 
+    background-color: #1e90ff;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.CustomNavbar-submit-button:hover {
+    background-color: #F9B233;
+}
+
+/* Botón Mi perfil */
+.CustomNavbar-profile-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #1e90ff;
     border: none;
     color: white;
     font-weight: 500;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-size: 0.9rem;
+    margin-bottom: 4%;
+    user-select: none;
 }
 
-.CustomNavbar-submit-button:hover {
+.CustomNavbar-logout-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #1e90ff;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    user-select: none;
+
+}
+
+/* Hover */
+.CustomNavbar-profile-button:hover,
+.CustomNavbar-logout-button:hover {
     background-color: #F9B233;
 }
 
@@ -132,7 +172,7 @@
 
 .CustomNavbar-login-links a:hover {
     text-decoration: underline;
-    color:#F9B233;
+    color: #F9B233;
 }
 
 
@@ -140,12 +180,14 @@
 /* ------------------- RESPONSIVE ------------------- */
 @media screen and (max-width: 1024px) {
     .CustomNavbar-navbar-container {
-        gap: 2rem;          /* Reduce el espacio entre los links */
+        gap: 2rem;
+        /* Reduce el espacio entre los links */
     }
 }
 
 @media screen and (max-width: 768px) {
     .CustomNavbar-navbar-container {
-        gap: 1rem;          /* Aún más compacto en móviles */
+        gap: 1rem;
+        /* Aún más compacto en móviles */
     }
 }
