@@ -8,7 +8,9 @@ import { PrismaService } from 'apps/auth-service/prisma/prisma.service';
 @Injectable()
 export class AuthService {
 
-    constructor(private prisma: PrismaService, private jwt: JwtService) { }
+    constructor(
+        private prisma: PrismaService,
+        private jwt: JwtService) { }
 
     async register(data: RegisterDtoType) {
         const saltRounds = parseInt(process.env.BCRYPT_SALT || '10', 10);
@@ -40,6 +42,21 @@ export class AuthService {
         const token = this.jwt.sign({ sub: user.id, role: user.role });
 
         return { accessToken: token };
-    }           
+    }
+
+    async verifyToken(authHeader: string) {
+        if (!authHeader) {
+            throw new UnauthorizedException('Token requerido');
+        }
+
+        const token = authHeader.replace('Bearer ', ''); 
+
+        try {
+            const payload = this.jwt.verify(token);
+            return payload;
+        } catch {
+            throw new UnauthorizedException('Token inválido o expirado');
+        }
+    }
 }
 

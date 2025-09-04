@@ -61,6 +61,7 @@ export default function Home() {
                     </div>
                     <div className='body-search-input'>
                         <input type='text' placeholder='Ej: Andalucía'></input>
+                    
                     </div>
                     <div className='body-search-button-container'>
                         <button className='body-search-button' onClick={() => console.log('Buscar')}>Buscar</button>

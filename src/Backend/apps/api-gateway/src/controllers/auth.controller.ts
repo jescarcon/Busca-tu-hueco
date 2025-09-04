@@ -1,4 +1,4 @@
-import { Controller, Post, Body, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Get,Post, Body,  Headers, HttpException, HttpStatus } from '@nestjs/common';
 import axios from 'axios';
 
 @Controller('auth')
@@ -28,6 +28,21 @@ export class AuthController {
       throw new HttpException(
         error.response?.data || 'Error en auth service (login)',
         error.response?.status || HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('verify')
+  async verify(@Headers('authorization') authHeader: string) {
+    try {
+      const response = await axios.get(`${this.authServiceUrl}/verify`, {
+        headers: { authorization: authHeader },
+      });
+      return response.data;
+    } catch (error) {
+      throw new HttpException(
+        error.response?.data || 'Error en auth service (verify)',
+        error.response?.status || HttpStatus.UNAUTHORIZED,
       );
     }
   }

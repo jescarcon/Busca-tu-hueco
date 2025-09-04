@@ -62,6 +62,14 @@
     color: #F9B233;
 }
 
+.CustomNavbar-login-button::after {
+  content: ' ▼';
+  transition: transform 0.2s ease;
+}
+
+.CustomNavbar-login-button:hover::after {
+  content: ' ▲';
+}
 /* Formulario del dropdown */
 .CustomNavbar-login-form {
     position: absolute;

@@ -4,65 +4,76 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './register.css';
 
 export default function Register() {
-    //#region variables
     const navigate = useNavigate();
-    
     const baseUrl = import.meta.env.VITE_DEBUG_MODE === 'true'
         ? import.meta.env.VITE_LOCAL_API_URL
         : import.meta.env.VITE_REMOTE_API_URL;
 
-
-    // Esquema de validación con Zod
     const registerSchema = z.object({
         name: z.string().min(2, 'Nombre muy corto'),
-        email: z.email('Email inválido'),
-        password: z.string().min(2, 'La contraseña debe tener al menos 6 caracteres'),
+        email: z.string().email('Email inválido'),
+        password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
     });
 
-    //#endregion
-
-    //#region Logic
-
-    // React Hook Form y Zod
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
         resolver: zodResolver(registerSchema),
     });
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data: any) => {
         try {
             await axios.post(`${baseUrl}/auth/register`, data);
             alert('Usuario creado con éxito. Ya puedes iniciar sesión.');
-            navigate('/login');
-        } catch (error) {
-            alert('Error en el registro. Revisa los datos e intenta de nuevo. ' + error);
+            navigate('/');
+        } catch (error: any) {
+            alert('Error en el registro. Revisa los datos e intenta de nuevo. ' + (error.response?.data?.message || error.message));
         }
     };
 
-    //#endregion
-
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Crear cuenta</h1>
+        <div className="register-page">
+            <form onSubmit={handleSubmit(onSubmit)} className="register-form">
+                <h1 className="register-title">Crear cuenta</h1>
 
-            <input placeholder="Nombre" {...register('name')} />
-            {errors.name && <p>{errors.name.message}</p>}
+                <div className="form-group">
+                    <label className="form-label">Nombre</label>
+                    <input
+                        className={`form-input ${errors.name ? 'input-error' : ''}`}
+                        placeholder="Tu nombre"
+                        {...register('name')}
+                    />
+                    {errors.name && <span className="form-error">{errors.name.message}</span>}
+                </div>
 
-            <input placeholder="Email" {...register('email')} />
-            {errors.email && <p>{errors.email.message}</p>}
+                <div className="form-group">
+                    <label className="form-label">Email</label>
+                    <input
+                        className={`form-input ${errors.email ? 'input-error' : ''}`}
+                        placeholder="correo@ejemplo.com"
+                        {...register('email')}
+                    />
+                    {errors.email && <span className="form-error">{errors.email.message}</span>}
+                </div>
 
-            <input type="password" placeholder="Contraseña" {...register('password')} />
-            {errors.password && <p>{errors.password.message}</p>}
+                <div className="form-group">
+                    <label className="form-label">Contraseña</label>
+                    <input
+                        type="password"
+                        className={`form-input ${errors.password ? 'input-error' : ''}`}
+                        placeholder="••••••••"
+                        {...register('password')}
+                    />
+                    {errors.password && <span className="form-error">{errors.password.message}</span>}
+                </div>
 
-            <button type="submit">Registrar</button>
-
-            <p>
-                ¿Ya tienes cuenta?{' '}
-                <button type="button" onClick={() => navigate('/login')}>
-                    Iniciar sesión
+                <button type="submit" disabled={isSubmitting} className="submit-btn">
+                    {isSubmitting ? 'Creando...' : 'Registrar'}
                 </button>
-            </p>
-        </form>
+
+                
+            </form>
+        </div>
     );
 }

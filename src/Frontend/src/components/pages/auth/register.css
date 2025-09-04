@@ -1,0 +1,96 @@
+/* Fondo y centrar la página */
+.register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #1e90ff, #F9B233);
+    min-height: 70vh;
+}
+
+/* Formulario */
+.register-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+/* Título */
+.register-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+    text-align: center;
+}
+
+/* Inputs y etiquetas */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #555;
+    user-select: none;
+
+}
+
+.form-input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1e90ff;
+}
+
+.input-error {
+    border-color: #e63946;
+}
+
+/* Mensaje de error */
+.form-error {
+    margin-top: 0.25rem;
+    color: #e63946;
+    font-size: 0.875rem;
+}
+
+/* Botón */
+.submit-btn {
+    background-color: #1e90ff;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+        user-select: none;
+
+}
+
+.submit-btn:hover {
+    background-color: #F9B233;
+}
+
+
+/* Footer */
+.form-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
