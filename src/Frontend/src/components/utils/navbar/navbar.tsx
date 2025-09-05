@@ -37,11 +37,6 @@ function CustomNavbar() {
     }
   };
 
-
-
-
-
-
   const goToRegister = () => {
     navigate('/registro');
   };
@@ -83,7 +78,8 @@ function CustomNavbar() {
             ) : (
               <>
                 <form className="CustomNavbar-form" onSubmit={handleSubmit(onSubmit)}>
-                  <input className="CustomNavbar-input-email" type="email" required placeholder="Correo"  {...register("email")}  autoComplete="off" />
+                  <input className="CustomNavbar-input-email" type="email" 
+                  required placeholder="Correo"  {...register("email")}  autoComplete="off" />
 
                   <input  className="CustomNavbar-input-password" type="password" placeholder="Contraseña" required {...register("password")}  autoComplete="off" />
                   
